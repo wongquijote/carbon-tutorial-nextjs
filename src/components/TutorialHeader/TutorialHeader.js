@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Header,
@@ -13,10 +13,11 @@ import {
   SideNav,
   SideNavItems,
   HeaderSideNavItems,
-} from "@carbon/react";
-import { Switcher, Notification, UserAvatar } from "@carbon/icons-react";
+} from '@carbon/react';
 
-import Link from "next/link";
+import { Switcher, Notification, UserAvatar } from '@carbon/icons-react';
+
+import Link from 'next/link';
 
 const TutorialHeader = () => (
   <HeaderContainer
@@ -42,11 +43,11 @@ const TutorialHeader = () => (
           isPersistent={false}
         >
           <SideNavItems>
-            <HeaderSideNavItems>
+            <HeaderNavigation aria-label="Carbon Tutorial">
               <Link href="/repos" passHref legacyBehavior>
                 <HeaderMenuItem>Repositories</HeaderMenuItem>
               </Link>
-            </HeaderSideNavItems>
+            </HeaderNavigation>
           </SideNavItems>
         </SideNav>
         <HeaderGlobalBar>
