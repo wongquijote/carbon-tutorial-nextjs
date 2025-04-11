@@ -12,8 +12,24 @@ import {
   Column,
 } from '@carbon/react';
 import Image from 'next/image';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function LandingPage() {
+  const [responseData, setResponseData] = useState(null);
+
+  const handleApiCall = async () => {
+    try {
+      const response = await axios.get(
+        'https://jsonplaceholder.typicode.com/posts/1'
+      );
+      setResponseData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   return (
     <Grid className="landing-page" fullWidth>
       <Column lg={16} md={8} sm={4} className="landing-page__banner">
@@ -50,7 +66,12 @@ export default function LandingPage() {
                     tools and resources, human interface guidelines, and a
                     vibrant community of contributors.
                   </p>
-                  <Button>Learn more</Button>
+                  <Button onClick={handleApiCall}>Fetch data</Button>
+                  {responseData && (
+                    <p className="landing-page__p">
+                      Response: {JSON.stringify(responseData)}
+                    </p>
+                  )}
                 </Column>
                 <Column md={4} lg={{ span: 8, offset: 7 }} sm={4}>
                   <Image

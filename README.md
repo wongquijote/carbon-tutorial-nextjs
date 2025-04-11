@@ -1,36 +1,31 @@
-# Step 2
+### Yarn installation
 
-## Carbon Tutorial for NextJS 13
+```
+npm install --global yarn
+yarn
+yarn build
+```
 
-Base NextJS 13 app using IBM Carbon Design System React components
+### To run the server
 
-## Create NextJS 13 app
-
-```bash
-yarn create next-app
-
-✔ What is your project named? … next-base
-✔ Would you like to use TypeScript? … *No / Yes
-✔ Would you like to use ESLint? … No / *Yes
-✔ Would you like to use Tailwind CSS? … *No / Yes
-✔ Would you like to use `src/` directory? … No / *Yes
-✔ Would you like to use App Router? (recommended) … No / *Yes
-✔ Would you like to customize the default import alias? … *No / Yes
-
-cd carbon-tutorial-next
+```
 yarn dev
 ```
 
-Configure paths in `jsconfig.json`
+### Install Carbon
 
 ```
-{
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@/components/*": ["components/*"],
-      "@/app/*": ["app/*"]
-   }
-  }
-}
+yarn add @carbon/react@1.33.0
+```
+
+### Install Sass
+
+```
+yarn add sass@1.63.6
+```
+
+##### Import Icons
+
+```
+yarn add @carbon/icons-react
 ```
